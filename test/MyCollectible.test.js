@@ -47,6 +47,7 @@ contract('MyCollectible', (accounts) => {
     })
 
     describe('indexing', async () => {
+        
         it('list collectible', async () => {
             // mint more colletible 
             await contract.mint('#000001')
@@ -62,6 +63,7 @@ contract('MyCollectible', (accounts) => {
                 collectible = await contract.collectibles[i]
                 result.push(collectible)
             }
+
             let expected = ['#000000','#000001','#000002','#000003']
             assert(result.join(',') , expected.join(',') , ' same element')
         })
